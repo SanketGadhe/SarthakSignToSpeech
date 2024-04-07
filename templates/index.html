@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav flex mx-16 my-7 items-center">
+          <div class="logo">
+            <img src="/templates/static/logo.jpg" alt="" width="50px" class="rounded-full"/>
+          </div>
+          <ul class="list flex mx-5 max-md-block">
+            <li class="p-2 text-lg">
+              <a href="/Explore" class="nav-link">Explore</a>
+            </li>
+            <li class="p-2 text-lg">
+              <a href="/Courses" class="nav-link">Courses</a>
+            </li>
+            <li class="p-2 text-lg">
+              <div class="translate-toggle" onclick="toggleTranslate()">
+                Translate <span id="toggleIcon">&#9660;</span>
+              </div>
+              <div class="togglelist hidden">
+                <div class="speech py-2 text-lg">
+                  <a href="/Speech" class="nav-link">Speech to Sign</a>
+                </div>
+                <div class="sign py-2 text-lg">
+                  <a href="http://127.0.0.1:5000/" class="nav-link">Sign To Speech</a>
+                </div>
+              </div>
+            </li>
+            <li class="p-2 text-lg">
+              <a href="http://127.0.0.1:8000/sign_gesture/" class="nav-link">Dictionary</a>
+            </li>
+            <li class="p-2 text-lg">
+              <a href="/Contact" class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      
+        <a href="/Signup" class="signup" onclick="hideNavbar()">Sign up</a>
+      </div>
+      
+    <div class="mt-16">
+        <div class="mt-16">
+            <div class="heading flex justify-center items-center text-center px-1 mt-2">
+                <div class="merge w-10/12 md:w-8/12 lg:w-6/12 xl:w-5/12">
+                    <div class="main text-4xl font-extrabold text-center">
+                        Convert Any Sign Language into speech, &nbsp;
+                        <i class="special">in your understandable Language</i>
+                    </div>
+                    <div class="submain">
+                        Get all your editing done in one place. Craft your videos for every
+                        platform using powerful features accessible for everyone.
+                    </div>
+                </div>
+            </div>
+            <div class="main flex gap-5 px-7 items-center mt-5">
+                <div class="content w-1/2">
+                    <div class="cohead font-bold text-2xl">
+                        Directly translate the Live Sign Language into audio
+                    </div>
+                    <div class="subcohead mt-4">
+                        The truth about recording speech? You lose time from recording voice
+                        overs in more takes than it should. Get your recording and
+                        translating done on just one platform. Get full access to premium,
+                        studio-grade AI voices (powered by ElevenLabs) to generate voice
+                        overs without having to record.
+                    </div>
+                    <div class="flex justify-start">
+                        <div
+                            class="capbutton rounded-xl mt-6 px-8 py-4 bg-gray-900 text-white flex justify-center items-center text-lg font-bold">
+                            <button onclick="showVideoFeed()">
+                                <div class="flex justify-center items-center gap-1" onclick="startPrediction()">
+                                    Capture Sign
+                                    <FaVideo />
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="video w-1/2 px-8 py-6 rounded-xl">
+                    <div id="video-container">
+                        <video id="gif" src="/static/hello.mp4" width="80%" autoplay></video>
+                        <img id="video-feed" src="" width="90%">
+                    </div>
+                    <script>
+                        var videoFeedUrl = "{{ url_for('video_feed') }}";
+                        function showVideoFeed() {
+                            let videoContainer = document.getElementById('video-container');
+                            let videoElement = document.getElementById('video-feed');
+                            let gifElement = document.getElementById('gif');
+                            videoElement.src = videoFeedUrl;
+                            gifElement.style.display = 'none';
+                        }
+                    </script>
+                    <script>
+                        function startPrediction() {
+                            // Your JavaScript code to start the prediction goes here
+                            console.log("Prediction started...");
+                        }
+                    </script>
+                </div>
+            </div>
+        <div class="review mt-32 bg-black text-white w-full h-2/6 px-5 py-5 flex justify-between items-center gap-3">
+            <div class="image">
+                <img src="static/m1.png"
+                    class="rounded-full w-96 h-52" alt="" />
+            </div>
+            <div class="review">
+                <div class="head text-lg font-medium">
+                    I am Angelin Monisha. I joined DEF's ISL course to learn ISL to
+                    communicate with Deaf people. Within this short period, I learned a
+                    lot about deaf people and their cultures and sign language. Now I am
+                    so confident that<i class="special">I can communicate with deaf community and can help
+                        them in finding solutions for their problems.</i> Our instructor Akash
+                    sir taught us very well. He never gets tired of clarifying our
+                    doubts. He made those classes filled with entertainment and we
+                    totally enjoyed those classes. Finally learning a new language opens
+                    many door as well as sign language brings together the deaf and the
+                    hearing. Thank you so much.
+                </div>
+            </div>
+        </div>
+        <div class="use mt-32 mx-10">
+            <div class="heading flex justify-center text-3xl font-extrabold">
+                How to Translate Sign Language
+            </div>
+            <div class="mt-5 videobox flex justify-center">
+                <video src="static/hello.mp4"
+                    width="40%" class="rounded-lg" autoplay></video>
+            </div>
+            <div className="steps flex justify-between items-center mt-9 px-8">
+                <div className="card ">
+                  <div className="head text-2xl font-bold ">
+                  <div className="imag flex justify-center items-center">
+      
+                    <img src="static/icons8-camera-50.png"  width={'60px'} height={'60px'}
+                    alt="" />
+                    </div>
+                   Step 1. <br />Capture Sign Language Gesture
+                  </div>
+                  <div className="inf mt-6 ">
+                  The Deaf/Mute person should stand in front of the screen where the sign-to-speech system is active.
+      
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="head text-2xl font-bold">
+                  <div className="imag flex justify-center items-center">
+                  <img src="static/icons8-translation-30.png" alt="" width={'60px'} height={'60px'}/>
+      </div>
+                    Step 2. <br />Translate gesture to text 
+                  </div>
+                  <div className="inf mt-6">
+                  Perform sign gestures that you want to communicate. These gestures will be captured by the system and displayed on the screen.
+      
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="head text-2xl font-bold">
+                  <div className="imag flex justify-center items-center">
+      
+                  <img src="static/icons8-aa-50.png" width={'60px'} height={'60px'} alt="" />
+      </div>
+                    Step 3. <br />Display Translated Text
+                  </div>
+                  <div className="inf mt-6">
+                  The system converts these sign gestures into understandable language, allowing normal people to understand the message being conveyed.
+      
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

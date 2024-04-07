@@ -1,0 +1,67 @@
+.navbar {
+    background-color: #161617;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo img {
+    border-radius: 50%;
+  }
+  
+  .list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .list li {
+    padding: 10px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .translate-toggle {
+    cursor: pointer;
+  }
+  
+  .togglelist {
+    position: absolute;
+    background-color: #252525bd;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .togglelist a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .signup {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: 1.3px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+  }
+  .special{ 
+    font-family: inherit;
+    font-style: normal;
+    background: linear-gradient(90deg, #6ce8db, #d578d7 16.7%, #ed6f71 33.3%, #f6cc4c 50%, #ed6f71 66.7%, #d578d7 83.3%, #6ce8db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: saturate(1.2);
+    background-size: 400% 400%;
+}

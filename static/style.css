@@ -1,0 +1,100 @@
+.navbar {
+    display: flex;
+    background-color: #171717;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+    align-items: center;
+}
+
+.logo {
+    /* Adjust this width and height according to your needs */
+    width: 24px;
+    height: 24px;
+}
+
+.list {
+    display: flex;
+    margin-left: 0.625rem;
+    margin-right: 0.625rem;
+}
+
+.list li {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.list li:hover {
+    color: #91cc5d;
+}
+
+.togglelist {
+    display: none;
+    position: absolute;
+    background-color: rgba(37, 37, 37, 0.73);
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.togglelist a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+}
+
+.togglelist a:hover {
+    color: #91cc5d;
+}
+
+.signup {
+    position: absolute;
+    right: 1rem;
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+    border: 1.3px solid black;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: black;
+    width: 2.5rem;
+}
+
+.signup:hover {
+    background-color: #91cc5d;
+    color: black;
+}
+.special{
+   
+    font-family: inherit;
+    font-style: normal;
+    background: linear-gradient(90deg, #6ce8db, #d578d7 16.7%, #ed6f71 33.3%, #f6cc4c 50%, #ed6f71 66.7%, #d578d7 83.3%, #6ce8db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: saturate(1.2);
+    background-size: 400% 400%;}
+
+@media (max-width: 768px) {
+    .list {
+        flex-direction: column;
+    }
+
+    .signup {
+        position: relative;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+}
