@@ -8,57 +8,150 @@
     <link rel="stylesheet" href="static/style.css">
     <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet">
 </head>
-
+<style>
+  .navbar {
+    background-color: #161617;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+  }
+  
+  .logo img {
+    border-radius: 50%;
+  }
+  
+  .list {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    font-size: x-large;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .list li {
+    padding: 10px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 600;
+  }
+  
+  .translate-toggle {
+    cursor: pointer;
+  }
+  
+  .togglelist {
+    position: absolute;
+    background-color: #252525bd;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: larger;
+    font-weight: 600;
+  }
+  
+  .togglelist a {
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 600;
+   
+  }
+  .hidden{
+    display: none;
+  }
+  .signup {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: 1.3px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+  }
+  .subcohead{
+    margin-top: 4; 
+  }
+  .translate-toggle{
+    font-size: larger;
+    font-weight: 600;
+  }
+  .Sentence{
+    font-weight: bold;
+    font-size: x-large;
+  }
+  .special{ 
+    font-family: inherit;
+    font-style: normal;
+    background: linear-gradient(90deg, #6ce8db, #d578d7 16.7%, #ed6f71 33.3%, #f6cc4c 50%, #ed6f71 66.7%, #d578d7 83.3%, #6ce8db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: saturate(1.2);
+    background-size: 400% 400%;
+}
+li:hover{
+    color: #91cc5d;
+}
+</style>
 <body>
-    <div class="navbar">
-        <div class="nav flex mx-16 my-7 items-center">
-          <div class="logo">
-            <img src="/templates/static/logo.jpg" alt="" width="50px" class="rounded-full"/>
-          </div>
-          <ul class="list flex mx-5 max-md-block">
-            <li class="p-2 text-lg">
-              <a href="/Explore" class="nav-link">Explore</a>
-            </li>
-            <li class="p-2 text-lg">
-              <a href="/Courses" class="nav-link">Courses</a>
-            </li>
-            <li class="p-2 text-lg">
-              <div class="translate-toggle" onclick="toggleTranslate()">
-                Translate <span id="toggleIcon">&#9660;</span>
-              </div>
-              <div class="togglelist hidden">
-                <div class="speech py-2 text-lg">
-                  <a href="/Speech" class="nav-link">Speech to Sign</a>
-                </div>
-                <div class="sign py-2 text-lg">
-                  <a href="http://127.0.0.1:5000/" class="nav-link">Sign To Speech</a>
-                </div>
-              </div>
-            </li>
-            <li class="p-2 text-lg">
-              <a href="http://127.0.0.1:8000/sign_gesture/" class="nav-link">Dictionary</a>
-            </li>
-            <li class="p-2 text-lg">
-              <a href="/Contact" class="nav-link">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      
-        <a href="/Signup" class="signup" onclick="hideNavbar()">Sign up</a>
+  <div class="navbar">
+    <div class="nav flex mx-16 my-7 items-center">
+      <div class="logo">
+        <img src="static/logo.jpg" alt="" width="170px" height="170px" class="rounded-full"/>
       </div>
+      <ul class="list flex mx-5 max-md-block">
+        <li class="p-2 text-xl">
+          <a href="https://sarthaksign.netlify.app/" class="nav-link">Explore</a>
+        </li>
+        <li class="p-2 text-xl">
+          <a href="https://sarthaksign.netlify.app/" class="nav-link">Courses</a>
+        </li>
+        <li class="p-2 text-xl">
+          <div class="translate-toggle" onclick="toggleTranslate()">
+            Translate <span id="toggleIcon">&#9660;</span>
+          </div>
+          <div class="togglelist hidden">
+            <div class="speech py-2 text-xl">
+              <a href="https://sarthaksign.netlify.app/" class="nav-link">Speech to Sign</a>
+            </div>
+            <div class="sign py-2 text-xl">
+              <a href="http://127.0.0.1:5000/" class="nav-link">Sign To Speech</a>
+            </div>
+          </div>
+        </li>
+        <li class="p-2 text-xl">
+          <a href="http://127.0.0.1:8000/sign_gesture/" class="nav-link">Dictionary</a>
+        </li>
+        <li class="p-2 text-xl">
+          <a href="/Contact" class="nav-link">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  
+    <a href="/Signup" class="signup" onclick="hideNavbar()">Sign up</a>
+  </div>
       
     <div class="mt-16">
         <div class="mt-16">
             <div class="heading flex justify-center items-center text-center px-1 mt-2">
                 <div class="merge w-10/12 md:w-8/12 lg:w-6/12 xl:w-5/12">
                     <div class="main text-4xl font-extrabold text-center">
-                        Convert Any Sign Language into speech, &nbsp;
+                        Convert Any Sign Language into speech,
                         <i class="special">in your understandable Language</i>
                     </div>
                     <div class="submain">
-                        Get all your editing done in one place. Craft your videos for every
-                        platform using powerful features accessible for everyone.
-                    </div>
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi, neque tempora magnam distinctio illo! Itaque dolor fugiat autem velit, vel </div>
                 </div>
             </div>
             <div class="main flex gap-5 px-7 items-center mt-5">
@@ -66,20 +159,32 @@
                     <div class="cohead font-bold text-2xl">
                         Directly translate the Live Sign Language into audio
                     </div>
-                    <div class="subcohead mt-4">
-                        The truth about recording speech? You lose time from recording voice
-                        overs in more takes than it should. Get your recording and
-                        translating done on just one platform. Get full access to premium,
-                        studio-grade AI voices (powered by ElevenLabs) to generate voice
-                        overs without having to record.
+                    <div class="subcohead mt-4 border w-full h-10">
+                   <div class="Sentence">
+                    Said:
+                   </div>
+                   <div class="said">
+                    {{ans}}
+                   </div>
                     </div>
-                    <div class="flex justify-start">
+                   
+                    <div class="flex justify-start gap-5">
                         <div
-                            class="capbutton rounded-xl mt-6 px-8 py-4 bg-gray-900 text-white flex justify-center items-center text-lg font-bold">
+                            class="capbutton rounded-xl mt-6 px-8 py-4 bg-gray-900 text-white flex justify-center items-center text-xl font-bold">
                             <button onclick="showVideoFeed()">
                                 <div class="flex justify-center items-center gap-1" onclick="startPrediction()">
                                     Capture Sign
                                     <FaVideo />
+                                </div>
+                            </button>
+                        </div>
+                        <div
+                            class="capbutton rounded-xl mt-6 px-8 py-4 bg-gray-900 text-white flex justify-center items-center text-xl font-bold">
+                            <button onclick="stopVideoFeed()">
+                                <div class="flex justify-center items-center gap-1" onclick="startPrediction()">
+                                    Stop Capture
+                                    <FaVideo />
+
                                 </div>
                             </button>
                         </div>
@@ -99,12 +204,29 @@
                             videoElement.src = videoFeedUrl;
                             gifElement.style.display = 'none';
                         }
+                        
                     </script>
                     <script>
                         function startPrediction() {
                             // Your JavaScript code to start the prediction goes here
                             console.log("Prediction started...");
                         }
+                        document.addEventListener('DOMContentLoaded', function() {
+                      text=document.querySelector('.said').innerText
+                          console.log(text)
+                          const speechSynthesis = window.speechSynthesis;
+
+            // Create a new speech utterance with the text to speak
+            const utterance = new SpeechSynthesisUtterance(text);
+
+            // Speak the text
+            speechSynthesis.speak(utterance);
+                        
+                      })
+                        function stopVideoFeed(){
+                        currentloc=window.location.href
+                        transferto=currentloc+'//video_feed?stop=True'
+                          window.location.href=transferto }
                     </script>
                 </div>
             </div>
@@ -114,7 +236,7 @@
                     class="rounded-full w-96 h-52" alt="" />
             </div>
             <div class="review">
-                <div class="head text-lg font-medium">
+                <div class="head text-xl font-medium">
                     I am Angelin Monisha. I joined DEF's ISL course to learn ISL to
                     communicate with Deaf people. Within this short period, I learned a
                     lot about deaf people and their cultures and sign language. Now I am
@@ -132,9 +254,9 @@
             <div class="heading flex justify-center text-3xl font-extrabold">
                 How to Translate Sign Language
             </div>
-            <div class="mt-5 videobox flex justify-center">
+            <div class="mt-5 videobox flex justify-center" style="width: 40%; height: 40%;">
                 <video src="static/hello.mp4"
-                    width="40%" class="rounded-lg" autoplay></video>
+                   muted width="20%" height="20%" class="rounded-xl" autoplay></video>
             </div>
             <div className="steps flex justify-between items-center mt-9 px-8">
                 <div className="card ">
